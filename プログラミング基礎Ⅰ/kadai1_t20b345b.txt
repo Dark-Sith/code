@@ -1,0 +1,70 @@
+レポート課題１
+T20B345B CHUAH HAO MIN
+
+1.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ ls | cat -n NiigataCity.txt > NiigataCity.num
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ cat NiigataCity.num
+     1  Murakami
+     2  Shibata
+     3  Niigata
+     4  Nagaoka
+     5  Tsubame
+     6  Ojiya
+     7  Itoigawa
+
+2.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ head -n 2 NiigataCity.num
+     1  Murakami
+     2  Shibata
+
+3.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ tail -n 2 NiigataCity.num
+     6  Ojiya
+     7  Itoigawa
+
+4.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ sort -k 2  NiigataCity.num > Sorted_NiigataCity.txt 
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ cat Sorted_NiigataCity.txt 
+     7  Itoigawa
+     1  Murakami
+     4  Nagaoka
+     3  Niigata
+     6  Ojiya
+     2  Shibata
+     5  Tsubame
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ sort -r -k  2  NiigataCity.num > Sorted_NiigataCity.txt 
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ cat Sorted_NiigataCity.txt 
+     5  Tsubame
+     2  Shibata
+     6  Ojiya
+     3  Niigata
+     4  Nagaoka
+     1  Murakami
+     7  Itoigawa	
+
+5.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ grep k -v NiigataCity.txt
+Shibata
+Niigata
+Tsubame
+Ojiya
+Itoigawa
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ grep k -c NiigataCity.txt
+2
+
+6.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ grep t -v NiigataCity.txt
+Murakami
+Nagaoka
+Tsubame
+Ojiya
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ grep t -c  NiigataCity.txt
+3
+
+7.回答
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ grep t -i -v  NiigataCity.txt
+Murakami
+Nagaoka
+Ojiya
+darkxith@DESKTOP-2UFE545:~/pro1work/pro1$ grep t -i -c  NiigataCity.txt
+4
