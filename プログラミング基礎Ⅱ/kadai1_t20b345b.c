@@ -101,7 +101,7 @@ int checkres()//任意課題:勝敗の確認
 {
     int i,j,count;
     count=0;
-    for (i=0;i<3;i++)
+    for (i=0;i<3;i++)//行の確認
     {
         if ((input[i][0]!=' ')&&(input[i][0]==input[i][1])&&(input[i][0]==input[i][2]))
         {
@@ -109,14 +109,14 @@ int checkres()//任意課題:勝敗の確認
         }
     }
 
-    for (i=0;i<3;i++)
+    for (i=0;i<3;i++)//列の確認
     {
         if ((input[0][i]!=' ')&&(input[0][i]==input[1][i])&&(input[0][i]==input[2][i]))
         {
             return 1;
         }
     }
-
+    //斜めの確認
     if (((input[0][0]!=' ')&&input[0][0]==input[1][1])&&(input[1][1]==input[2][2]))
     {
         return 1;
