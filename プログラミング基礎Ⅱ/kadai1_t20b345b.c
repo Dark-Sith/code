@@ -84,7 +84,7 @@ void getplayermove()//プレーヤーの選択を取る
         syb='X';
     }
 
-    if (input[row][col]!=' ')
+    if (input[row][col]!=' ')//任意課題：入力のミスを抑止する機能
     {
         printf("すでにO・Xの入った/入力値は１から３以外ので、他のところを選んでください！\n");
         player--;move--;
@@ -97,7 +97,7 @@ void getplayermove()//プレーヤーの選択を取る
     void playercheck();
 }
 
-int checkres()//勝敗の確認
+int checkres()//任意課題:勝敗の確認
 {
     int i,j,count;
     count=0;
