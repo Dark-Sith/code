@@ -44,20 +44,27 @@ int main()
 int discount()
 {
     char spwords[10]="Christmas";
-    int count=0;
+    int count=0, x=1;
 
     for (i=0;i<strlen(telegram);i++)//配列の中で特定な文字列が含まる確認
     {
-        for (j=0;j<strlen(spwords);j++)
+        if (telegram[i]==spwords[0])
         {
-            if ((telegram[i+j]==spwords[j]))
+            for (j=1;j<strlen(telegram);j++)
             {
-                count++;//文字が１つ含まると、記載する
+                if (telegram[j]==spwords[x])
+                {
+                    count++; x++;
+                }
+                else
+                {
+                    break;
+                }
             }
         }
     }
     
-    if (count>=10)//文字が特定な文字列が超えると、特定な文字列が含まるということを確認した（割引される）
+    if (count>=8)//文字が特定な文字列が超えると、特定な文字列が含まるということを確認した（割引される）
     {
         return 1;
     }
@@ -73,7 +80,7 @@ chuahhm@chuahhm-PC:~/Documents/pro2$ ./kadai2_t20b345b
 クリスマス割引です！文字列'Christmas'が含まれていると、-１０円！
 電文を入力してください>>>Merry Christmas!!
 あなたの電文の長さは17です。
-文字列Christmasが入るので、-１０円！
+文字列Christmasが入るので、-１０円！任意課題：料金が変わる機能の追加
 料金は75円です。
 chuahhm@chuahhm-PC:~/Documents/pro2$ 
 2.考察もしくはコメント
