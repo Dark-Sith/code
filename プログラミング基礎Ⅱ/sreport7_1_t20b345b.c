@@ -16,6 +16,7 @@ int main(void)
 
     fp = fopen(filename,"w");
     printf("ファイルの中身が消去された。\n");
+    fclose(fp);
     
     return 0;
 }
