@@ -9,7 +9,7 @@ typedef struct
 {
     double real, img;
 }complex;
-typedef enum {Orth, Polar} form;
+typedef enum {Orth, Polar} form;//直行形式,極形式を表す列挙体
 complex comp_scan (void);
 complex comp_neg (complex u);//複素数uの符号を反転して返す関数
 complex comp_conj (complex u);//複素数uの共役複素数を返す関数
