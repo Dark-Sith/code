@@ -15,4 +15,6 @@ int main(void)
     }
 
     printf("%d! = %21.16g\n",k,factorial);
+
+    return 0;
 }
