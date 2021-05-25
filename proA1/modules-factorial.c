@@ -1,8 +1,8 @@
 #include <stdio.h>
 #define LIMIT 69//52!最大の位数
 void initialize_array(int limit);//初期化
-void division();
-void print(int display);
+void division();//計算機能
+void print(int display);//計算結果を出力する
 int num[LIMIT];
 int digit;//桁
 int highest;//num[fac]の最高位の桁
@@ -17,8 +17,8 @@ int main(void)
 
     for ( fac = 1; fac <= 52; fac++)//1!～52!の計算
     {        
-        division();
-        print(highest);
+        division();//計算機能
+        print(highest);//計算結果を出力する
     }
     return 0;
 }
@@ -52,7 +52,7 @@ void division()
     }
 }
 
-void print(int display)
+void print(int display)//計算結果を出力する
 {
     int max_width;//右揃えるために必要なスペース
     int i;
