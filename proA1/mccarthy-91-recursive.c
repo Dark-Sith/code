@@ -1,10 +1,13 @@
+/*
+再帰的にをに用いてMcCarthyの91関数を出力するプログラミング
+*/
 #include <stdio.h>
 
 int mccarthy91(int input);
 
 int main(void)
 {
-    int input;//user input
+    int input;//ユザーから数字を入力してもらう
 
     printf("McCarthyの91関数を出力するcプログラム。\n");
     printf("数字を入力してください >>> ");
@@ -23,6 +26,7 @@ int mccarthy91 (int input)
         return input - 10;//f(x) = x - 10 if x > 100
         /*
         if input > 100, subtract 10 from input and return it as the result
+        x > 100なら結果はx - 10になります
         */
     }
     else
@@ -30,14 +34,7 @@ int mccarthy91 (int input)
         return mccarthy91(mccarthy91(input + 11));//f(x) = f(f(x+11))
         /*
         if input <= 100, run the McCarthy91 function inside a McCarthy91function but now with adding 10 to the input
+        x <= 100ならMcCarthyの91関数にx = x + 11としてまた一回McCarthyの91関数を実行します。
         */
     }
 }
-/*
-実行結果:
-chuahhm@chuahhm-PC:~/Documents/proA1$ ./mccarthy-91-recursive 
-McCarthyの91関数を出力するcプログラム。
-数字を入力してください >>> 87
-McCarthy(87) = 91
-chuahhm@chuahhm-PC:~/Documents/proA1$ 
-*/
