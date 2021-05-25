@@ -13,7 +13,7 @@ int carry;//桁上がり
 int main(void)
 {
     initialize_array(LIMIT);
-    num[1] = 1; highest = 1;
+    num[1] = 1; highest = 1;//初期化
 
     for ( fac = 1; fac <= 52; fac++)//1!～52!の計算
     {        
