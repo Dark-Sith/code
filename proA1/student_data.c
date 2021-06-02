@@ -75,7 +75,7 @@ void arrange(student stud[], int max)
 void dataoutput(student stud[], int max)
 {
     int i;
-    printf("ID_No\t\tEng\tMath\tJan\tTotal\n");
+    printf("ID_No\tEng\tMath\tJan\tTotal\n");
 
     for(i = 0; i < max; i++)
     {
@@ -104,7 +104,7 @@ void avg(student stud[], int max)
     jan_avg = jan_avg/max;
     total_avg = total_avg/max;
 
-    printf("Avg\t\t%.1f\t%.1f\t%.1f\t%.1f\n",eng_avg,math_avg,jan_avg,total_avg);    
+    printf("Avg\t%.1f\t%.1f\t%.1f\t%.1f\n",eng_avg,math_avg,jan_avg,total_avg);    
 }
 
 void dev(student stud[], int max)
@@ -125,5 +125,45 @@ void dev(student stud[], int max)
     jan_dev = sqrt(jan_var/max - (jan_avg * jan_avg));
     total_dev = sqrt(total_var/max - (total_avg * total_avg));
 
-    printf("Dev\t\t%.1f\t%.1f\t%.1f\t%.1f\n",eng_dev,math_dev,jan_dev,total_dev);
+    printf("Dev\t%.1f\t%.1f\t%.1f\t%.1f\n",eng_dev,math_dev,jan_dev,total_dev);
 }
+/*
+chuahhm@chuahhm-PC:~/Documents/proA1$ gcc -lm -o  student_data student_data.c 
+chuahhm@chuahhm-PC:~/Documents/proA1$ ./student_data 
+何人分の成績を入力しますか? >>> 5
+1人目のデータ:
+学籍番号:T0801
+英語の点数:44
+数学の点数:65
+国語の点数:51
+2人目のデータ:
+学籍番号:T0802
+英語の点数:83
+数学の点数:100
+国語の点数:84
+3人目のデータ:
+学籍番号:T0804
+英語の点数:58
+数学の点数:30
+国語の点数:57
+4人目のデータ:
+学籍番号:T0805
+英語の点数:74
+数学の点数:100
+国語の点数:65
+5人目のデータ:
+学籍番号:T0809
+英語の点数:85
+数学の点数:80
+国語の点数:90
+ID_No   Eng     Math    Jan     Total
+T0802   83.0    100.0   84.0    267.0
+T0809   85.0    80.0    90.0    255.0
+T0805   74.0    100.0   65.0    239.0
+T0801   44.0    65.0    51.0    160.0
+T0804   58.0    30.0    57.0    145.0
+*********************************************
+Avg     68.8    75.0    69.4    213.2
+Dev     15.6    26.1    15.2    50.6
+chuahhm@chuahhm-PC:~/Documents/proA1$ 
+*/
