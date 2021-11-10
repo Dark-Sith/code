@@ -81,6 +81,7 @@ int main()
     {
         do
         {
+	    grpnum = ((readline()-2)/8);
             writefile(c, grpnum);
             cout << "また新しい部活・サークルを追加しますか？" << endl;
             cout << "はい >>> 0 ｜ いいえ >>> 1" << endl;
