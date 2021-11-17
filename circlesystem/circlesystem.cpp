@@ -46,7 +46,7 @@ int main()
             sort(c);
 
             system("clear");
-            cout<<"＜結果＞"<<endl<<"あなたにおすすめのサークル・部活（好みに合ってる店）はこちらです。"<<endl;
+            cout<<"＜結果＞"<<endl<<"あなたにおすすめのサークル・部活（好みが合ってる点数）はこちらです。"<<endl;
             //順位を表示する
             for ( i = 0; i < grpnum; i++){
                 cout << i+1 << ":\t";
@@ -65,10 +65,10 @@ int main()
 
             //詳細を知りたい場合はサークル・部活の情報を表示する
             cout << "サークル名：" << c[num].name << endl;
-            cout << "＜選択肢情報＞" << endl <<"種類\t|人数\t|ガチさ\t|屋内/外\t|飲み\t|男女比\t"<< endl;
-            cout <<"------------------------------------------------------"<< endl;
-            cout << c[num].type <<"\t|"<< c[num].crowd <<"\t|"<< c[num].gachi <<"\t|"<< c[num].venue <<"\t\t|"<< c[num].nomi <<"\t|"<< c[num].genderratio << endl;
-            cout << "もう一度検索を行いますか？" << endl;
+            cout << "＜選択肢情報＞" << endl <<"種類\t|人数\t\t|ガチさ\t\t|屋内/外\t|飲み\t|男女比\t"<< endl;
+            cout <<"------------------------------------------------------------------------------------"<< endl;
+            cout << c[num].type <<"\t|"<< c[num].crowd <<"\t\t|"<< c[num].gachi <<"\t\t|"<< c[num].venue <<"\t\t|"<< c[num].nomi <<"\t|"<< c[num].genderratio << endl;
+            cout << "\nもう一度検索を行いますか？" << endl;
             cout << "はい >>> 0 ｜ いいえ >>> 1" << endl;
             cin >> end;
             while ( end < 0 || end > 1){//0と1の数以外の数字が入力された場合
@@ -84,7 +84,7 @@ int main()
         {
             grpnum = ((readline()-2)/8);
             writefile(c, grpnum);
-            cout << "また新しい部活・サークルを追加しますか？" << endl;
+            cout << "\nまた新しい部活・サークルを追加しますか？" << endl;
             cout << "はい >>> 0 ｜ いいえ >>> 1" << endl;
             cin >> end;
             while ( end < 0 || end > 1){//0と1の数以外の数字が入力された場合
@@ -217,7 +217,7 @@ void writefile(circle c[], int grpnum){
                 cin >> input;
                 if (input == 0)
                 {
-                    fprintf(fp,"飲み多い\n");
+                    fprintf(fp,"多い\n");
                 }
                 else if (input == 1)
                 {
