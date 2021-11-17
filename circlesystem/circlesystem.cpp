@@ -16,6 +16,8 @@ int readline();//ファイルの行数を計算する関数
 int main()
 {
     int i, choice, end, grpnum;
+    string pwdcheck;
+    string pwd = "unicirclesystem2021";
     circle c[MAX];
     system("clear");//画面をリセットする
     //メイン画面
@@ -82,16 +84,26 @@ int main()
     {
         do
         {
-            grpnum = ((readline()-2)/8);
-            writefile(c, grpnum);
-            cout << "\nまた新しい部活・サークルを追加しますか？" << endl;
-            cout << "はい >>> 0 ｜ いいえ >>> 1" << endl;
-            cin >> end;
-            while ( end < 0 || end > 1){//0と1の数以外の数字が入力された場合
-                cout << "エラーです。0と1の数学だけ入力してください！" << endl;
+            cout << "パスワードを入力してください。\nパスワード：";
+            cin >> pwdcheck;
+            if (pwdcheck != pwd)
+            {
+                cout << "パスワードが間違いました。もう一度やり直してください！" << endl;
+            }
+            else
+            {
+                grpnum = ((readline()-2)/8);
+                writefile(c, grpnum);
+                cout << "\nまた新しい部活・サークルを追加しますか？" << endl;
+                cout << "はい >>> 0 ｜ いいえ >>> 1" << endl;
                 cin >> end;
-            }    
-            system("clear");
+                while ( end < 0 || end > 1)
+                {//0と1の数以外の数字が入力された場合
+                    cout << "エラーです。0と1の数学だけ入力してください！" << endl;
+                    cin >> end;
+                } 
+                system("clear");
+            }
         } while (end == 0);
     }
     cout << "ご利用ありがとうございました！" << endl;
@@ -140,6 +152,8 @@ void writefile(circle c[], int grpnum){
     while(getline(file,line)){
         if(line=="%d", grpnum + 1){
             getline(file,line);
+            system("clear");
+            cout << "----------新しい部活・サークルの追加----------" << endl;
 	        cout<<"部活・サークル名:";
 	        fgets(ch,sizeof(ch),stdin);
 	        fgets(ch,sizeof(ch),stdin);
